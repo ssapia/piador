@@ -5,17 +5,17 @@ pipeline {
       parallel {
         stage('Test REST') {
           steps {
-            sh 'mvn test'
+            sh 'echo "mvn test"'
           }
         }
         stage('Test SOAP NDC') {
           steps {
-            sh 'mvn test'
+            sh 'echo "mvn test"'
           }
         }
         stage('Test SOAP CVC') {
           steps {
-            sh 'mvn test'
+            sh 'echo "mvn test"'
           }
         }
       }
@@ -25,7 +25,7 @@ pipeline {
         input(message: 'Continuar?', id: 'a', ok: 'b')
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         sh 'echo teste'
       }
