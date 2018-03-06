@@ -20,7 +20,7 @@ pipeline {
         }
         stage('SOAP NDC') {
           steps {
-            sh 'czxczxc'
+            sh 'echo aa'
           }
         }
         stage('REST') {
@@ -28,6 +28,11 @@ pipeline {
             sh 'echo "OK"'
           }
         }
+      }
+    }
+    stage('Deploy') {
+      steps {
+        build 'Deploy'
       }
     }
   }
