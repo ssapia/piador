@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        build 'Build'
-      }
-    }
     stage('Test REST') {
       parallel {
         stage('Test REST') {
@@ -28,6 +23,11 @@ pipeline {
     stage('Deploy') {
       steps {
         input(message: 'Continuar?', id: 'a', ok: 'b')
+      }
+    }
+    stage('') {
+      steps {
+        sh 'echo teste'
       }
     }
   }
