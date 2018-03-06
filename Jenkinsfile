@@ -4,10 +4,18 @@ pipeline {
     stage('Test REST') {
       parallel {
         stage('Test REST') {
-          steps {
-            sh 'echo "mvn test"'
-          }
-        }
+          parallel {
+           stage('Test REST AA') {
+             steps {
+               sh 'echo "mvn test"'
+             }
+           }
+           stage('Test REST BB') {
+             steps {
+               sh 'echo "mvn test"'
+             }
+           }           
+         }
         stage('Test SOAP NDC') {
           steps {
             sh 'echo "mvn test"'
