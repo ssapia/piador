@@ -20,12 +20,12 @@ pipeline {
         }
       }
     }
-    stage('Deploy') {
+    stage('Deploy?') {
       steps {
-        input(message: 'Continuar?', id: 'a', ok: 'b')
+        input(message: 'Continuar?', id: 'a', ok: 'SIM')
       }
     }
-    stage('error') {
+    stage('Deploy') {
       steps {
         sh 'echo teste'
       }
