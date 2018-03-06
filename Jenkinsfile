@@ -32,7 +32,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        build(job: '../Deploy/master', propagate: true)
+        build '../Deploy/master'
       }
     }
   }
